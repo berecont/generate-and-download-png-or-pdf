@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>input output with vanilla js</title>
+    
+    <link rel="stylesheet" type="text/css" id="mce-u0" href="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.3.1/skins/ui/oxide/skin.min.css">
+    <link rel="stylesheet" href="./style.css">
+    
+  </head>
+  <body>
+
+    <main>
+      
+      <div class="input-wrapper">
+        <input type="file" id="fileinput" style="display:none" onchange="loadFile()"/>
+        <input type="text" id="headerinput" placeholder="Überschrift eingeben" onchange="updateHeader()"/>
+        <textarea id="descriptioninput" placeholder="Kurztext eingeben" oninput="updateDescription()"></textarea>
+        <button onclick="updateDescription()">Kurztext anzeigen</button>
+      </div>
+
+      <div id="capture" class="output-wrapper">
+        <img id="image" src="" alt="">
+        <h1 id="header"></h1>
+        <p id="description"></p>  
+      </div>  
+
+      <div class="download-wrapper">
+        <button id="downloadPng">Download PNG</button>
+        <button id="downloadPdf">Download PDF</button>
+      </div>
+      
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.3.1/tinymce.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="./main.js"></script>
+    
+  </body>
+</html>
